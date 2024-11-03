@@ -42,9 +42,9 @@ Contributor(s):
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://192.168.140.148:3306/programacion_a?serverTimezone=UTC</property>
-    <property name="hibernate.connection.username">grupo</property>
-    <property name="hibernate.connection.password">123456789*</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/programacion_a?serverTimezone=UTC</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">Guayaba426@</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <mapping resource="POJOs/Cliente.hbm.xml"/>
