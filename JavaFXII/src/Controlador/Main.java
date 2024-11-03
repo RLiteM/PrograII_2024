@@ -20,8 +20,8 @@ public class Main extends Application{
         @Override
     public void start(Stage primaryStage ){
         try{
-            Parent root=FXMLLoader.load(getClass().getResource("/Vista/Menu.fxml"));
-            primaryStage.setTitle("Persona");
+            Parent root=FXMLLoader.load(getClass().getResource("/Vista/Login.fxml"));
+            primaryStage.setTitle("LOGIN");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
         }catch (Exception e){

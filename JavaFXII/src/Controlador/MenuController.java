@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Session;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -25,12 +27,16 @@ import javafx.stage.Stage;
  */
 public class MenuController implements Initializable {
 
+    @FXML
+    private Label labelUsuario;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+               labelUsuario.setText(Session.getNombreUsuario());
     }
     @FXML
     public void abrirVentana(){
