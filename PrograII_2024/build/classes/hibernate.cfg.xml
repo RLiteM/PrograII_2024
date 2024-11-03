@@ -47,8 +47,9 @@ Contributor(s):
     <property name="hibernate.connection.password">Guayaba426@</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <mapping resource="POJOs/Cliente.hbm.xml"/>
-    <mapping resource="POJOs/Persona.hbm.xml"/>
+    <mapping resource="POJOs/Usuario.hbm.xml"/>
     <mapping resource="POJOs/Empleado.hbm.xml"/>
+    <mapping resource="POJOs/Persona.hbm.xml"/>
+    <mapping resource="POJOs/Cliente.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

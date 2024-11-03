@@ -1,5 +1,5 @@
 package POJOs;
-// Generated 5/10/2024 03:24:50 PM by Hibernate Tools 4.3.1
+// Generated 03-nov-2024 13:59:05 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -12,6 +12,7 @@ public class Empleado  implements java.io.Serializable {
 
      private Integer idEmpleado;
      private Persona persona;
+     private Usuario usuario;
      private Integer horasTrabajo;
      private String dpi;
      private String estadoCivil;
@@ -21,8 +22,9 @@ public class Empleado  implements java.io.Serializable {
     public Empleado() {
     }
 
-    public Empleado(Persona persona, Integer horasTrabajo, String dpi, String estadoCivil, BigDecimal sueldo, Boolean estado) {
+    public Empleado(Persona persona, Usuario usuario, Integer horasTrabajo, String dpi, String estadoCivil, BigDecimal sueldo, Boolean estado) {
        this.persona = persona;
+       this.usuario = usuario;
        this.horasTrabajo = horasTrabajo;
        this.dpi = dpi;
        this.estadoCivil = estadoCivil;
@@ -43,6 +45,13 @@ public class Empleado  implements java.io.Serializable {
     
     public void setPersona(Persona persona) {
         this.persona = persona;
+    }
+    public Usuario getUsuario() {
+        return this.usuario;
+    }
+    
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     public Integer getHorasTrabajo() {
         return this.horasTrabajo;

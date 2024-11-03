@@ -1,5 +1,5 @@
 package POJOs;
-// Generated 5/10/2024 03:24:50 PM by Hibernate Tools 4.3.1
+// Generated 03-nov-2024 13:59:05 by Hibernate Tools 4.3.1
 
 
 
@@ -11,6 +11,7 @@ public class Cliente  implements java.io.Serializable {
 
      private Integer idCliente;
      private Persona persona;
+     private Usuario usuario;
      private String telefono;
      private String direccion;
      private String nit;
@@ -18,8 +19,9 @@ public class Cliente  implements java.io.Serializable {
     public Cliente() {
     }
 
-    public Cliente(Persona persona, String telefono, String direccion, String nit) {
+    public Cliente(Persona persona, Usuario usuario, String telefono, String direccion, String nit) {
        this.persona = persona;
+       this.usuario = usuario;
        this.telefono = telefono;
        this.direccion = direccion;
        this.nit = nit;
@@ -38,6 +40,13 @@ public class Cliente  implements java.io.Serializable {
     
     public void setPersona(Persona persona) {
         this.persona = persona;
+    }
+    public Usuario getUsuario() {
+        return this.usuario;
+    }
+    
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     public String getTelefono() {
         return this.telefono;

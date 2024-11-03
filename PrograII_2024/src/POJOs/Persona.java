@@ -1,5 +1,5 @@
 package POJOs;
-// Generated 5/10/2024 03:24:50 PM by Hibernate Tools 4.3.1
+// Generated 03-nov-2024 13:59:05 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -12,6 +12,7 @@ public class Persona  implements java.io.Serializable {
 
 
      private Integer idPersona;
+     private Usuario usuario;
      private String nombre;
      private Integer cedula;
      private Integer edad;
@@ -22,7 +23,8 @@ public class Persona  implements java.io.Serializable {
     public Persona() {
     }
 
-    public Persona(String nombre, Integer cedula, Integer edad, Boolean estado, Set<Empleado> empleados, Set<Cliente> clientes) {
+    public Persona(Usuario usuario, String nombre, Integer cedula, Integer edad, Boolean estado, Set<Empleado> empleados, Set<Cliente> clientes) {
+       this.usuario = usuario;
        this.nombre = nombre;
        this.cedula = cedula;
        this.edad = edad;
@@ -37,6 +39,13 @@ public class Persona  implements java.io.Serializable {
     
     public void setIdPersona(Integer idPersona) {
         this.idPersona = idPersona;
+    }
+    public Usuario getUsuario() {
+        return this.usuario;
+    }
+    
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     public String getNombre() {
         return this.nombre;

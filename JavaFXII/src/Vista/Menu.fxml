@@ -13,7 +13,7 @@
     </stylesheets>
    <children>
       <Button layoutX="132.0" layoutY="257.0" mnemonicParsing="false" onAction="#abrirVentana" text="Persona" />
-      <Button layoutX="261.0" layoutY="200.0" mnemonicParsing="false" text="Cliente" />
+      <Button layoutX="261.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnCliente" text="Cliente" />
       <Button layoutX="420.0" layoutY="257.0" mnemonicParsing="false" text="Empleado" />
    </children>
 </AnchorPane>
