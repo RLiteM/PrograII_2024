@@ -14,13 +14,16 @@ public class TablaPersona {
     private String nombrePersona;
     private Integer cedulaPersona;
     private Integer edadPersona;
+    private String usuario; 
 
-    public TablaPersona(Integer idPersona, String nombrePersona, Integer cedulaPersona, Integer edadPersona) {
+    public TablaPersona(Integer idPersona, String nombrePersona, Integer cedulaPersona, Integer edadPersona, String usuario) {
         this.idPersona = idPersona;
         this.nombrePersona = nombrePersona;
         this.cedulaPersona = cedulaPersona;
         this.edadPersona = edadPersona;
+        this.usuario = usuario;
     }
+    
 
     /**
      * @return the idPersona
@@ -76,6 +79,20 @@ public class TablaPersona {
      */
     public void setEdadPersona(Integer edadPersona) {
         this.edadPersona = edadPersona;
+    }
+
+    /**
+     * @return the usuario
+     */
+    public String getUsuario() {
+        return usuario;
+    }
+
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
     
 }

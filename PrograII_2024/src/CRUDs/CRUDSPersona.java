@@ -30,11 +30,13 @@ public class CRUDSPersona {
             session.beginTransaction();
             Criteria criteria=session.createCriteria(Persona.class);
             criteria.add(Restrictions.eq("estado",true));
+            criteria.createAlias("usuario", "u");
             criteria.setProjection(Projections.projectionList()
                     .add(Projections.property("idPersona"))
                     .add(Projections.property("nombre"))
                     .add(Projections.property("cedula"))
                     .add(Projections.property("edad"))
+                    .add(Projections.property("u.usuario"))
             );
             criteria.addOrder(Order.desc("idPersona"));
             lista =criteria.list();

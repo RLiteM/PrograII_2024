@@ -59,6 +59,8 @@ public class PersonaController implements Initializable {
     private Button btnAnular;
     @FXML
     private Button btnCancelar;
+    @FXML
+    private TableColumn<?, ?> usuario;
 
     /**
      * Initializes the controller class.
@@ -193,13 +195,14 @@ public class PersonaController implements Initializable {
         listaPersona = FXCollections.observableArrayList();
         for (Iterator it = CRUDs.CRUDSPersona.universo().iterator(); it.hasNext();) {
             Object[] item = (Object[]) it.next();
-            listaPersona.add(new TablaPersona((Integer) item[0], (String) item[1], (Integer) item[2], (Integer) item[3]));
+            listaPersona.add(new TablaPersona((Integer) item[0], (String) item[1], (Integer) item[2], (Integer) item[3], (String) item[4]));
 
         }
         this.idPersona.setCellValueFactory(new PropertyValueFactory("idPersona"));
         this.nombrePersona.setCellValueFactory(new PropertyValueFactory("nombrePersona"));
         this.cedulaPesona.setCellValueFactory(new PropertyValueFactory("cedulaPersona"));
         this.edadPersona.setCellValueFactory(new PropertyValueFactory("edadPersona"));
+        this.usuario.setCellValueFactory(new PropertyValueFactory("usuario"));
         tblPersona.setItems(listaPersona);
     }
 
