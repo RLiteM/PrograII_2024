@@ -31,5 +31,6 @@
       <Button fx:id="btnModificar" layoutX="164.0" layoutY="234.0" mnemonicParsing="false" onAction="#modificar" text="Modificar" />
       <Button fx:id="btnAnular" layoutX="63.0" layoutY="291.0" mnemonicParsing="false" onAction="#anular" text="Anular" />
       <Button fx:id="btnCancelar" layoutX="188.0" layoutY="291.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button layoutX="145.0" layoutY="385.0" mnemonicParsing="false" onAction="#reporteCliente" text="Reporte" />
    </children>
 </AnchorPane>

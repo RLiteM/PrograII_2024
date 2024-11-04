@@ -5,6 +5,12 @@
  */
 package reporteprogramacion;
 
+import Reportes.ReporteCliente;
+import groovyjarjarcommonscli.ParseException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  *
  * @author IngeMayk
@@ -15,7 +21,17 @@ public class ReporteProgramacion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
     }
-    
+
+    public static List ReporteCliente() throws ParseException {
+        List<ReporteCliente> list = new ArrayList<ReporteCliente>();
+        for (Iterator it = CRUDs.CRUDCliente.universo().iterator(); it.hasNext();) {
+            Object[] item = (Object[]) it.next();
+            list.add(new ReporteCliente((String) item[0], (Integer) item[1], (Integer) item[2], (String) item[3], (String) item[4]));
+            factory comp = new factory();
+            comp.setReportecliente((ArrayList<ReporteCliente>) list);
+        }
+        return list;
+    }
 }

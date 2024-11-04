@@ -8,9 +8,13 @@ package Controlador;
 import Modelo.TablaPersona;
 
 import java.net.URL;
+import java.text.ParseException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Observable;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +28,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.view.JasperViewer;
+import reporteprogramacion.factory;
 
 /**
  * FXML Controller class
@@ -243,6 +255,36 @@ public class PersonaController implements Initializable {
         btnAnular.setVisible(true);
         btnModificar.setVisible(true);
         btnCancelar.setVisible(true);
+    }
+    
+    @FXML
+        public void reporteCliente() throws ParseException {
+        try {
+            List lista = null;
+            reporteprogramacion.ReporteProgramacion.ReporteCliente();
+            lista = (factory.reporteCliente());
+            if (!lista.isEmpty()) {
+//                String rutaInforme = "Reportes\\reporteCliente.jrxml";
+                JasperReport jasperReport = JasperCompileManager.compileReport("src/Reportes/ReporteCliente.jrxml");
+//                JasperReport jasperReport = JasperCompileManager.compileReport("reporteCliente.jrxml");
+//            Map<String, Object> parameters = new HashMap<>();
+//            parameters.put("fecha1", f1);
+//            parameters.put("fecha2", f23);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, new JRBeanCollectionDataSource(lista));
+                JasperViewer viewer = new JasperViewer(jasperPrint, false);
+                viewer.setVisible(true);
+//            JasperPrint informe = JasperFillManager.fillReport(rutainforme,parametros,miconeccion.conexion);
+
+                // Export to PDF or display in a viewer
+                // You can save it to a file, display it in a viewer, or use other means to work with the generated PDF.
+            } else {
+                System.out.println("No existe información en estas fechas");
+            }
+        } catch (JRException e) {
+            System.out.println("Error al cargar el reporte: " + e);
+        } catch (groovyjarjarcommonscli.ParseException ex) {
+            Logger.getLogger(PersonaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
